@@ -100,7 +100,6 @@ export default function Checkout() {
     const request = {
       "products": items.map(item => { return {
         "productId": item.productId,
-        "selectedSize": item.size
     }}),
       "customer": {
         "email":  email,
@@ -202,7 +201,6 @@ export default function Checkout() {
                   </div>
                   <div>
                     <p>{item.title}</p>
-                    <p>Size - UK{item.size.size}</p>
                     <p>Price - £{item.price}</p>
                   </div>
                 </OrderItem>

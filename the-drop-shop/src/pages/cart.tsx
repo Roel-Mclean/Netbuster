@@ -88,7 +88,6 @@ export default function Cart() {
               <tr>
                 <HeaderData></HeaderData>
                 <HeaderData>Name</HeaderData>
-                <HeaderData>Size</HeaderData>
                 <HeaderData>Price</HeaderData>
                 <HeaderData>Qty</HeaderData>
                 <HeaderData></HeaderData>
@@ -106,7 +105,6 @@ export default function Cart() {
                     />
                   </ProductImageContainer>
                   <td>{product.title}</td>
-                  <td>{product.size.size}</td>
                   <td>£{product.price}</td>
                   <td>1</td>
                   <td>

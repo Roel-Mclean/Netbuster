@@ -9,5 +9,4 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProductOrder {
     private String productId;
-    private Size selectedSize;
 }

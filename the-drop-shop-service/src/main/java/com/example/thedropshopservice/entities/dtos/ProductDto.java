@@ -14,17 +14,19 @@ public class ProductDto {
     private String title;
     private String description;
     private Double price;
-    private String brand;
+    private int rating;
     private List<Image> images;
-    private List<Size> sizes;
+    private int stock;
+    private String trailerURL;
 
     public ProductDto(Product product, List<Image> images) {
         this.productId = product.getProductId();
         this.title = product.getTitle();
         this.description = product.getDescription();
         this.price = product.getPrice();
-        this.brand = product.getBrand();
+        this.rating = product.getRating();
         this.images = images;
-        this.sizes = product.getSizes();
+        this.stock = product.getStock();
+        this.trailerURL = product.getTrailerURL();
     }
 }

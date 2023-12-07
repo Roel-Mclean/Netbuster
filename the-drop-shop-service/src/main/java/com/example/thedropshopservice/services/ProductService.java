@@ -59,11 +59,7 @@ public class ProductService {
             return;
         }
         var product = productOptional.get();
-        var selectedSize = product.getSizes().stream()
-                .filter(size -> size.getSizeId().equals(productOrder.getSelectedSize().getSizeId())).findFirst();
-        if (selectedSize.isPresent()) {
-            selectedSize.get().decreaseStock();
-        }
+        product.setStock(product.getStock() - 1);
         productRepository.save(product);
     }
 

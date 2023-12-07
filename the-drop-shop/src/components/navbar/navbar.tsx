@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { NavBarInterface } from "./navbar.types";
 import { PageLink } from "../componentsindex";
 import { FaBars, FaTimes, FaShoppingCart, FaUser } from "react-icons/fa";
+import Image from "next/image";
+import logo from "../../../public/images/logo.png"
 
 const StyledNavBar = styled.div<{isTransparent?: boolean}>`
     position: relative;     
@@ -12,7 +14,7 @@ const StyledNavBar = styled.div<{isTransparent?: boolean}>`
     justify-content: space-between;
     align-items: center;
     height: 110px;
-    background-color: ${({isTransparent}) => isTransparent ? "rgba(31, 31, 31, 0)" : "rgba(31, 31, 31, 1)"};
+    background-color: ${({isTransparent}) => isTransparent ? "rgba(0, 0, 0, 0.7)" : "rgba(31, 31, 31, 1)"};
     color: #003399;
     width: 100vw;
 `;
@@ -85,7 +87,13 @@ export const NavBar: React.FC<NavBarInterface> = (props: NavBarInterface) => {
   return (
     <StyledNavBar isTransparent={props.isTransparent}>
       <PageLink href="/" isLarge isHighlighted={false} >
-        Netbuster
+        <Image 
+          src={logo}
+          alt="Netbuster"
+          style={{objectFit: 'contain'}}
+          width={200}
+          height={150}
+        />
       </PageLink>
 
       <List>

@@ -29,14 +29,18 @@ function uploadProductsMiddleware(req, res) {
                 type: Number,
                 required: true
             },
-            brand: {
+            stock: {
+                type: Number,
+                required: true
+            },
+            rating: {
+                type: Number,
+                required: true
+            },
+            trailerURL: {
                 type: String,
                 required: true
             },
-            sizes: [{
-                size: Number,
-                stock: Number
-            }],
             imageIds: [{
                 type: ObjectId
             }]
@@ -70,8 +74,9 @@ function uploadProductsMiddleware(req, res) {
         title: body.title,
         description: body.description,
         price: body.price,
-        brand: body.brand,
-        sizes: sizes,
+        stock: 10,
+        rating: body.rating,
+        trailerURL: body.trailerURL,
         imageIds: images.map(image => {
             return image._id
         })

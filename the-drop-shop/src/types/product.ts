@@ -2,10 +2,11 @@ export interface Product {
     productId: string;
     title: string;
     description: string;
-    brand: string;
+    rating: number;
     price: number;
     images: Image[];
-    sizes: Size[];
+    stock: number;
+    trailerURL: string;
 }
 
 export interface Image {

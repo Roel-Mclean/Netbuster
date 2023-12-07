@@ -25,8 +25,7 @@ export const ShoeTile = ({shoe}: ShoeTileInterface) => {
     const router = useRouter();
 
     const isInStock = () => {
-        const stock = shoe.sizes.map(size => size.stock);
-        return stock.reduce((total, num) => total + num) > 0;
+        return shoe.stock > 0;
     }
 
     //navigate to product page when tile is selected

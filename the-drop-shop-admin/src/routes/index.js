@@ -9,7 +9,7 @@ let routes = app => {
 
   router.get("/", homeController.getHome);
 
-  const cpUpload = upload.fields([{ name: 'file', maxCount: 5 }, { name: 'title', maxCount: 1 }, { name: 'description', maxCount: 1 }, { name: 'brand', maxCount: 1 }, { name: 'price', maxCount: 1 }])
+  const cpUpload = upload.fields([{ name: 'file', maxCount: 5 }, { name: 'title', maxCount: 1 }, { name: 'description', maxCount: 1 }, { name: 'rating', maxCount: 1 }, { name: 'trailerURL', maxCount: 1 }, { name: 'price', maxCount: 1 }])
   router.post("/upload", cpUpload, uploadController.uploadFiles);
 
   return app.use("/", router);

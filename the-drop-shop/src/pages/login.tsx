@@ -1,72 +1,111 @@
 import Head from "next/head";
-import Image from "next/image";
 import styled from "styled-components";
-import { Divider, Footer, NavBar, PageLink } from "@/components/componentsindex";
-import { useContext, useState } from "react";
+import { NavBar } from "@/components/componentsindex";
+import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+`;
 
 const Section = styled.fieldset`
-  background-color: #D9D9D9;
-  border: none;
-  text-align: left;
-  margin: 35px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px 0;
 `;
 
 const Input = styled.input`
-  border: none;
-  height: 50px;
-  width: 100%;
-  font-size: 24px
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  height: 40px;
+  width: 95%;
+  font-size: 16px;
+  padding: 0 10px;
+  margin: 10px 0;
 `;
 
 const Button = styled.button`
-  border-radius: 8px;
-  background-color: #1F1F1F;
-  border: 1px solid;
-  max-width: 445px;
-  width: 100%;
-  height: 70px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
   color: white;
-  font-size: 22px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  margin: 35px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
 
   &:hover {
-    cursor: pointer;
+    background-color: #0056b3;
   }
 `;
 
 const Account = styled.p`
-    margin: 35px;
-`
+  margin-top: 20px;
+`;
+
+const StyledLink = styled(Link)`
+  color: #007bff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 export default function Login() {
-const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-    return (
-        <>
-        <Head>
-            <title>Login</title>
-        </Head>
-        <div style={{ zIndex: 1, position: "relative" }}>
-        <NavBar highlightedLink="Profile" />
-        <div/>
-        <Section>
-        <h2>Login</h2>
-            <br />
-            <label htmlFor="Email">Email</label><br />
-            <Input type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} /><br/>
-            <label htmlFor="Password">Password</label><br />
-            <Input type="text" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br/>
-          </Section>
-          <Button type="submit">Login</Button>
-          <Account>
-            Don't have an account? <Link href="/signup">Sign Up</Link>
-          </Account>
-      </div>
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-        </>
-    )
+  const signIn = (e: any) => {
+    e.preventDefault()
+    router.replace("/")
+  }
+
+  return (
+    <>
+      <Head>
+        <title>Login</title>
+      </Head>
+      <NavBar highlightedLink="Profile" />
+      <PageContainer>
+        <form onSubmit={(e) => signIn(e)}>
+          <Section>
+            <h2>Login</h2>
+            <label htmlFor="email">Email</label>
+            <Input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label htmlFor="password">Password</label>
+            <Input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Section>
+        <Button type="submit">Login</Button>
+        </form>
+        <Account>
+          Don't have an account? <StyledLink href="/signup">Sign Up</StyledLink>
+        </Account>
+      </PageContainer>
+    </>
+  );
 }

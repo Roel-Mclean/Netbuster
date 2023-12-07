@@ -42,7 +42,7 @@ export const ImageShowcase = (props: ImageShowcaseInterface) => {
                 width={800}
                 height={800}
             />
-            <AdditionalImagesList>
+            {/* <AdditionalImagesList>
                 {props.images.map((image, index) => (
                     <ListItem key={index}>
                         <div onClick={(e) => setMainImage(image)}>
@@ -56,7 +56,7 @@ export const ImageShowcase = (props: ImageShowcaseInterface) => {
                         </div>
                     </ListItem>
                 ))}
-            </AdditionalImagesList>
+            </AdditionalImagesList> */}
         </Container>
     );
 }

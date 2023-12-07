@@ -1,99 +1,143 @@
 import Head from "next/head";
-import Image from "next/image";
 import styled from "styled-components";
-import { Divider, Footer, NavBar, PageLink } from "@/components/componentsindex";
+import { NavBar } from "@/components/componentsindex";
 import { useContext, useState } from "react";
 import { UserContext } from "./_app";
+import { useRouter } from "next/router";
 import { User } from "@/types/user";
 
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+`;
+
 const Section = styled.fieldset`
-  background-color: #D9D9D9;
-  border: none;
-  text-align: left;
-  margin: 35px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px 0;
 `;
 
 const Input = styled.input`
-  border: none;
-  height: 50px;
-  width: 100%;
-  font-size: 24px
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  height: 40px;
+  width: 95%;
+  font-size: 16px;
+  padding: 0 10px;
+  margin: 10px 0;
 `;
 
 const Button = styled.button`
-  border-radius: 8px;
-  background-color: #1F1F1F;
-  border: 1px solid;
-  max-width: 445px;
-  width: 100%;
-  height: 70px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
   color: white;
-  font-size: 22px;
-  font-weight: 300;
-  margin-bottom: 20px;
-  margin: 35px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
 
   &:hover {
-    cursor: pointer;
+    background-color: #218838;
   }
 `;
 
 const Account = styled.p`
-    margin: 35px;
-`
+  margin-top: 20px;
+`;
+
+const StyledLink = styled.a`
+  color: #28a745;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 export default function SignUp() {
-  const {currentUser, setCurrentUser} = useContext(UserContext);
-const [email, setEmail] = useState("");
-const [username, setUsername] = useState("");
-const [password, setPassword] = useState("");
+  const { setCurrentUser } = useContext(UserContext);
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-const signup = async () => {
-  const userFetch = await fetch("http://localhost:8080/api/v1/users/signup", {
-    method: "POST",
-    body: JSON.stringify({
-      email: email,
-      username: username,
-      password: password
-    }),
-    headers: {
-      "Content-type": "application/json"
+  const signup = async (e: any) => {
+    e.preventDefault();
+    const userFetch = await fetch("http://localhost:8080/api/v1/users/signup", {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        username: username,
+        password: password
+      }),
+      headers: {
+        "Content-type": "application/json"
+      }
+    })
+
+    console.log("userFetch:", userFetch)
+
+    var user = await userFetch.json() as User
+
+    console.log("user:", user)
+
+    if (user && setCurrentUser) {
+      setCurrentUser(user)
+      router.push("/")
     }
-  })
-
-  var user = await userFetch.json() as User
-
-  if (user && setCurrentUser) {
-    setCurrentUser(user)
   }
-}
 
-    return (
-        <>
-        <Head>
-            <title>Sign Up</title>
-        </Head>
-        <div style={{ zIndex: 1, position: "relative" }}>
-        <NavBar highlightedLink="Profile" />
-        <div/>
+  return (
+    <>
+      <Head>
+        <title>Sign Up</title>
+      </Head>
+      <NavBar highlightedLink="Profile" />
+      <PageContainer>
         <form onSubmit={signup}>
-        <Section>
-        <h2>Sign Up</h2>
-            <br />
-            <label htmlFor="Email">Email</label><br />
-            <Input type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} /><br/>
-            <label htmlFor="Username">Username</label><br />
-            <Input type="text" id="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} /><br/>
-            <label htmlFor="Password">Password</label><br />
-            <Input type="text" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} /><br/>
+          <Section>
+            <h2>Sign Up</h2>
+            <label htmlFor="email">Email</label>
+            <Input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label htmlFor="username">Username</label>
+            <Input
+              type="text"
+              id="username"
+              name="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <label htmlFor="password">Password</label>
+            <Input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </Section>
           <Button type="submit">Sign Up</Button>
         </form>
-          <Account>
-            Already have an account? <a href="/login">Login</a>
-          </Account>
-      </div>
-
-        </>
-    )
+        <Account>
+          Already have an account? <StyledLink href="/login">Login</StyledLink>
+        </Account>
+      </PageContainer>
+    </>
+  );
 }

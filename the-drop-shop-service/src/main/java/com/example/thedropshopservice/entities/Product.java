@@ -21,7 +21,8 @@ public class Product {
     private String title;
     private String description;
     private Double price;
-    private String brand;
+    private int rating;
     private List<ObjectId> imageIds;
-    private List<Size> sizes;
+    private int stock;
+    private String trailerURL;
 }

@@ -4,6 +4,9 @@ import { Product, Size } from "@/types/product";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
+import { IconType } from "react-icons";
+import { FaStar } from "react-icons/fa";
+import YouTube from "react-youtube";
 import styled from "styled-components";
 
 const FlexContainer = styled.div`
@@ -41,6 +44,7 @@ export default function Product() {
     const [selectedSize, setSelectedSize] = useState<Size>();
     const [addToCartButtonText, setAddToCartButtonText] = useState("Add To Cart");
     const { items, addToCart, removeFromCart } = useContext(CartContext);
+    const [stars, setStars] = useState<IconType[]>([]);
 
     useEffect(() => {
         //check if router fields have updated before fetching product
@@ -60,17 +64,24 @@ export default function Product() {
     }
 
     const addProductToCart = () => {
-        if (selectedSize && addToCart && product) {
+        if (addToCart && product) {
             addToCart({
                 productId: product.productId, 
                 image: product.images[0],
                 title: product.title, 
-                size: selectedSize, 
                 price: product.price
             });
             setAddToCartButtonText("Added To Cart!")
         }
     }
+
+    const opts = { 
+        height: "390", 
+        width: "640", 
+        playerVars: { 
+          autoplay: 0, 
+        }, 
+      };
 
     return (
         <>
@@ -78,20 +89,25 @@ export default function Product() {
                 <title>{product?.title}</title>
                 <link rel="icon" href="/favicon.webp" />
             </Head>
-            <NavBar />
+            <NavBar highlightedLink="Shop" />
             <FlexContainer>
                 <ImageShowcase images={product ? product.images : []} />
                 <div style={{paddingLeft: 15}}>
                     <h2>{product?.title}</h2>
                     <p>£{product?.price}</p>
-                    <SizeGrid sizes={product ? product.sizes : []} setSelectedSize={setSelectedSize} />
                     <div style={{textAlign: "center"}}>
                         <Button onClick={addProductToCart}>{addToCartButtonText}</Button>
                     </div>
-                    <p style={{fontWeight: 400}}>Free delivery and returns on all UK orders.</p>
+                    <p style={{fontWeight: 400}}>Free delivery on all orders.</p>
                     <Divider />
-                    <h3>Trainer Facts</h3>
+                    {
+                        Array(product?.rating).fill(1).map(() => (
+                            <FaStar color="#C60D0D"/>
+                        )) 
+                    }
+                    <h3>Synopsis</h3>
                     <p>{product?.description}</p>
+                    <YouTube videoId={product?.trailerURL} opts={opts} />
                 </div>
             </FlexContainer>
         </>

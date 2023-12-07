@@ -6,10 +6,11 @@ import Link from "next/link";
 const StyledLink = styled.a`
     margin: 25px;
     text-decoration: none;
-    color: #FFF;
+    color: #C60D0D;
     font-size: 22px;
     position: relative;
     transition: color 0.3s ease;
+    font-weight: bold;
 
     &::before {
         content: "";
@@ -20,14 +21,14 @@ const StyledLink = styled.a`
         border-radius: 100%;
         bottom: -3px;
         left: 0;
-        background-color: #C375F2;
+        background-color: #FFF;
         transform: scaleX(0);
         transition: transform 0.3s ease;
     }
 
     &:hover::before, &:hover {
         transform: scaleX(1);
-        color: #C375F2;
+        color: #FFF;
     }
 
     @media (max-width: 768px) {
