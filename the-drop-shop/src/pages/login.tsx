@@ -77,6 +77,7 @@ export default function Login() {
     <>
       <Head>
         <title>Login</title>
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <NavBar highlightedLink="Profile" />
       <PageContainer>

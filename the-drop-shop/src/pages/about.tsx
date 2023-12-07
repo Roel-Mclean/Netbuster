@@ -56,7 +56,7 @@ export default function About() {
     <>
       <Head>
         <title>About</title>
-        <link rel="icon" href="/favicon.webp" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <div style={{ zIndex: 1, position: "relative" }}>
         <NavBar highlightedLink="About" />

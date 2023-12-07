@@ -28,7 +28,7 @@ export default function Home() {
         <>
             <Head>
                 <title>The Drop Shop</title>
-                <link rel="icon" href="/favicon.webp" />
+                <link rel="icon" href="/favicon.png" />
             </Head>
             <HeroSection />
             <ShoeCollection title='Latest Drops' products={latestProducts} />

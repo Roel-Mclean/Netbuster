@@ -20,19 +20,19 @@ export default function ConfirmOrder() {
         <StyledConfirmOrder>
             <Head>
                 <title>Order</title>
-                <link rel="icon" href="/favicon.webp" />
+                <link rel="icon" href="/favicon.png" />
             </Head>
             <NavBar highlightedLink="Cart"/>
             <h2>{`Thank you for your order ${currentUser ? currentUser.username : ""}!`}</h2>
             <Image
-                src='/images/confirm_order_image.jpg.webp'
+                src='/images/popcorn.png'
                 alt='Thank you for your order'
-                width={425}
-                height={300}
+                width={300}
+                height={350}
                 style={{objectFit: 'contain'}}
             />
             <p>Your item will be dispatched shortly</p>
-            <CallToAction href="/shop" isTransparent>Shop Now</CallToAction>
+            <CallToAction href="/shop">Shop Now</CallToAction>
         </StyledConfirmOrder>
     );
 }

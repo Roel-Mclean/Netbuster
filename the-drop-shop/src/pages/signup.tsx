@@ -101,6 +101,7 @@ export default function SignUp() {
     <>
       <Head>
         <title>Sign Up</title>
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <NavBar highlightedLink="Profile" />
       <PageContainer>

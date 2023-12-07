@@ -76,7 +76,7 @@ export default function Cart() {
     <StyledCart>
       <Head>
         <title>Cart</title>
-        <link rel="icon" href="/favicon.webp" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <NavBar highlightedLink="Cart" />
       <h2>Cart</h2>
