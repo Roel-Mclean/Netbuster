@@ -16,7 +16,7 @@ export default function Home() {
 
     const getLatestProducts = async () => {
         try {
-            const res = await fetch("http://localhost:8080/api/v1/products/latest?num=3");
+            const res = await fetch("http://localhost:8080/api/v1/products/latest?num=4");
             const data = await res.json() as Product[];
             setLatestProducts(data);
         } catch (err) {
