@@ -85,8 +85,6 @@ export default function SignUp() {
       }
     })
 
-    console.log("userFetch:", userFetch)
-
     var user = await userFetch.json() as User
 
     console.log("user:", user)

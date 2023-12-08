@@ -4,7 +4,6 @@ const StyledFooter = styled.footer`
     width: 100vw;
     height: 80px;
     line-height: 80px;
-    margin-top: 70px;
     background-color: #1F1F1F;
     position: relative;
     bottom: 0;

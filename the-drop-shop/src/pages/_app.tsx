@@ -80,7 +80,7 @@ const Notification = styled.div`
 export const UserContext = createContext<UserContextStruct>({currentUser: null, setCurrentUser: null});
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [currentUser, setCurrentUser] = useState<User>({} as User);
+  const [currentUser, setCurrentUser] = useState<User | null>({} as User);
   const [isOnline, setIsOnline] = useState(true);
 
   useEffect(() => {

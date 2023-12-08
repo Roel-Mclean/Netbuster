@@ -10,6 +10,10 @@ const StyledLink = styled.a`
     position: relative;
     transition: color 0.3s ease;
 
+    &:hover::before, &:hover {
+        color: #C60D0D;
+    }
+
     @media (max-width: 768px) {
         font-size: 16px;
     } 
@@ -21,6 +25,12 @@ const Container = styled.div<{shouldBeTrasparent?: boolean}>`
     padding: 23px 29px;
     text-align: center;
     max-width: 175px;
+
+    transition: border-color 0.3s ease;
+
+    &:hover::before, &:hover {
+        border-color: #C60D0D;
+    }
 `;
 
 export const CallToAction = (props: CallToActionInterface) => {

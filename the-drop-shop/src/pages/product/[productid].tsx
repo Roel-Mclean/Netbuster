@@ -50,7 +50,7 @@ export default function Product() {
         //check if router fields have updated before fetching product
         if (!router.isReady) return;
         getProduct(productid as string);
-    }, [router.isReady])
+    }, [router.isReady, productid])
 
     const getProduct = async (productId: string) => {
         
@@ -101,8 +101,8 @@ export default function Product() {
                     <p style={{fontWeight: 400}}>Free delivery on all orders.</p>
                     <Divider />
                     {
-                        Array(product?.rating).fill(1).map(() => (
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" height="30px" width="30px" version="1.1" id="Layer_1" viewBox="0 0 512 512" xmlSpace="preserve">
+                        Array(product?.rating).fill(1).map((_, index) => (
+                            <svg key={index} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" height="30px" width="30px" version="1.1" id="Layer_1" viewBox="0 0 512 512" xmlSpace="preserve">
 <polygon style={{fill: "#FF6243"}} points="104.571,208.963 96.791,148.379 414.22,148.379 367.524,512 143.487,512 114.079,283.003 "/>
 <g>
 	<polygon style={{opacity: 0.4, fill: "#891C00"}} points="216.722,512 190.923,148.379 130.644,148.379    177.34,512  "/>

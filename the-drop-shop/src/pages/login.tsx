@@ -104,7 +104,7 @@ export default function Login() {
         <Button type="submit">Login</Button>
         </form>
         <Account>
-          Don't have an account? <StyledLink href="/signup">Sign Up</StyledLink>
+          Don&apos;t have an account? <StyledLink href="/signup">Sign Up</StyledLink>
         </Account>
       </PageContainer>
     </>

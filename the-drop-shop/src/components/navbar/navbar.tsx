@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { NavBarInterface } from "./navbar.types";
 import { PageLink } from "../componentsindex";
 import { FaBars, FaTimes, FaShoppingCart, FaUser } from "react-icons/fa";
 import Image from "next/image";
 import logo from "../../../public/images/logo.png"
+import { UserContext } from "@/pages/_app";
+import Link from "next/link";
 
 const StyledNavBar = styled.div<{isTransparent?: boolean}>`
     position: relative;     
@@ -22,7 +24,7 @@ const StyledNavBar = styled.div<{isTransparent?: boolean}>`
 const List = styled.ul`
     display: flex;
     list-style-type: none;
-    margin: 0;
+    margin: 0 40px;
     padding: 0;
     color: #003399;
     font-size: 22px;
@@ -77,16 +79,97 @@ const CloseIcon = styled(FaTimes)`
     right: 15px;
 `;
 
+const DropdownContainer = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+const DropdownButton = styled.button<{isOpen: boolean}>`
+  color: ${(props) => (props.isOpen ? "#C60D0D" : "#FFF")};
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+`;
+
+const DropdownContent = styled.div<{isOpen: boolean}>`
+  display: ${(props) => (props.isOpen ? 'block' : 'none')};
+  position: absolute;
+  top: 100%;
+  left: -150%;
+  background-color: #F1F1F1;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 100px;
+
+  button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+`;
+
+const ProfileLink = styled.a`
+  display: block;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
+    font-weight: normal;
+
+    &:hover::before, &:hover {
+        transform: scaleX(1);
+        color: #C60D0D;
+        transition: transform 0.3s ease;
+    }
+`;
+
+const Button = styled.button`
+  display: block;
+  text-decoration: none;
+  color: #C60D0D;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s ease;
+  font-weight: normal;
+
+  &:hover::before, &:hover {
+      background-color: transparent;
+      transform: scaleX(1);
+      color: #FFF;
+      transition: transform 0.3s ease;
+  }
+`;
+
 export const NavBar: React.FC<NavBarInterface> = (props: NavBarInterface) => {
+  const { currentUser, setCurrentUser } = useContext(UserContext);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  const signOut = () => {
+    if (setCurrentUser)
+      setCurrentUser(null);
+  }
+
   return (
     <StyledNavBar isTransparent={props.isTransparent}>
-      <PageLink href="/" isLarge isHighlighted={false} >
+      <Link style={{margin: "50px"}} href="/" >
         <Image 
           src={logo}
           alt="Netbuster"
@@ -94,7 +177,7 @@ export const NavBar: React.FC<NavBarInterface> = (props: NavBarInterface) => {
           width={200}
           height={150}
         />
-      </PageLink>
+      </Link>
 
       <List>
         <Item>
@@ -110,7 +193,20 @@ export const NavBar: React.FC<NavBarInterface> = (props: NavBarInterface) => {
           <PageLink isHighlighted={props.highlightedLink === "Cart"} href="/cart"><FaShoppingCart /></PageLink>
         </Item>
         <Item>
-          <PageLink isHighlighted={props.highlightedLink === "Profile"} href="/login"><FaUser /></PageLink>
+          <DropdownContainer>
+            <DropdownButton isOpen={isDropdownOpen} onClick={toggleDropdown}><FaUser /></DropdownButton>
+            <DropdownContent isOpen={isDropdownOpen}>
+              {!currentUser ? (
+                <>
+                  <ProfileLink href="/login">Login</ProfileLink>
+                  <ProfileLink href="/signup">Sign Up</ProfileLink>
+                </>
+              ) : (
+                <Button onClick={signOut}>Sign Out</Button>
+              )
+              }
+            </DropdownContent>
+          </DropdownContainer>
         </Item>
       </List>
 
