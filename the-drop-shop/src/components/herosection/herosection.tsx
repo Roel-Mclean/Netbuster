@@ -32,7 +32,7 @@ export const HeroSection = () => {
     return (
         <StyledHeroSection>
             <NavBar isTransparent highlightedLink='Home' />
-            <CallToAction href='/shop'>Shop Now</CallToAction>
+            <CallToAction isTransparent={false} href='/shop'>Shop Now</CallToAction>
         </StyledHeroSection>
     );
 }

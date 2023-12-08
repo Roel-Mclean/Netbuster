@@ -7,6 +7,7 @@ import { Divider } from "./divider/divider";
 import { Footer } from "./footer/footer";
 import { ImageShowcase } from "./imageshowcase/imageshowcase";
 import { SizeGrid } from "./sizegrid/sizegrid";
+import { ProductCarousel } from "./productcarousel/productcarousel";
 
 //Index for components to make imports look nicer
-export { HeroSection, NavBar, PageLink, ShoeCollection, ShoeTile, Divider, Footer, ImageShowcase, SizeGrid }
+export { HeroSection, NavBar, PageLink, ShoeCollection, ShoeTile, Divider, Footer, ImageShowcase, SizeGrid, ProductCarousel }

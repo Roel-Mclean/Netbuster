@@ -15,9 +15,9 @@ const StyledLink = styled.a`
     } 
 `;
 
-const Container = styled.div<{isTransparent?: boolean}>`
-    background-color: ${(isTransparent) => !isTransparent ? "transparent" : "#FFF"};
-    border: ${(isTransparent) => !isTransparent ? "1px solid #1F1F1F" : "none"};
+const Container = styled.div<{shouldBeTrasparent?: boolean}>`
+    background-color: ${(props) => props.shouldBeTrasparent ? "transparent" : "#FFF"};
+    border: ${(props) => props.shouldBeTrasparent ? "1px solid #1F1F1F" : "none"};
     padding: 23px 29px;
     text-align: center;
     max-width: 175px;
@@ -28,7 +28,7 @@ export const CallToAction = (props: CallToActionInterface) => {
     return (
         <Link href={props.href} passHref legacyBehavior style={{textDecoration: "none"}} >
             <StyledLink href={props.href}>
-                <Container isTransparent={props.isTransparent}>{props.children}</Container>
+                <Container shouldBeTrasparent={props.isTransparent}>{props.children}</Container>
             </StyledLink>
         </Link>
     );

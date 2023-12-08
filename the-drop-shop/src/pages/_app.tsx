@@ -1,11 +1,12 @@
 import type { AppProps } from 'next/app'
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { Montserrat } from 'next/font/google';
 import { CartProvider } from '@/context/cartcontext';
 import { Footer } from '@/components/componentsindex';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { User } from '@/types/user';
 import { UserContextStruct } from '@/types/usercontextstruct';
+import { FaExclamationCircle } from 'react-icons/fa';
 
 const montserrat = Montserrat({subsets : ['latin']});
 
@@ -60,10 +61,32 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const Notification = styled.div`
+  left: 0;
+  right: 0;
+  margin: 50px auto;
+  padding: 20px;
+  height: 50px;
+  width: 40%;
+  background-color: #C60D0D;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  font-size: 20px;
+  color: #FFF;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+`;
+
 export const UserContext = createContext<UserContextStruct>({currentUser: null, setCurrentUser: null});
 
 export default function App({ Component, pageProps }: AppProps) {
   const [currentUser, setCurrentUser] = useState<User>({} as User);
+  const [isOnline, setIsOnline] = useState(true);
+
+  useEffect(() => {
+    window.addEventListener("online",  () => setIsOnline(true))
+    window.addEventListener("offline",  () => setIsOnline(false))
+  }, [])
 
   return (
     <CartProvider>
@@ -75,6 +98,9 @@ export default function App({ Component, pageProps }: AppProps) {
       >
         <GlobalStyle />
         <Component {...pageProps} />
+        {!isOnline &&
+          <Notification>You are offline, reconnect connection to continue. <FaExclamationCircle /></Notification>
+        }
         <Footer />
       </UserContext.Provider>
     </CartProvider>

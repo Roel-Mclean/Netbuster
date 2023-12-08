@@ -25,14 +25,14 @@ export default function ConfirmOrder() {
             <NavBar highlightedLink="Cart"/>
             <h2>{`Thank you for your order ${currentUser ? currentUser.username : ""}!`}</h2>
             <Image
-                src='/images/popcorn.png'
+                src='/images/popcorn.jpg'
                 alt='Thank you for your order'
                 width={300}
                 height={350}
                 style={{objectFit: 'contain'}}
             />
             <p>Your item will be dispatched shortly</p>
-            <CallToAction href="/shop">Shop Now</CallToAction>
+            <CallToAction isTransparent={false} href="/shop">Shop Now</CallToAction>
         </StyledConfirmOrder>
     );
 }

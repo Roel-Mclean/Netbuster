@@ -1,4 +1,4 @@
-import { Footer, NavBar, ShoeCollection } from "@/components/componentsindex";
+import { Footer, NavBar, ProductCarousel, ShoeCollection } from "@/components/componentsindex";
 import Head from "next/head";
 import shoes from '../shoecollection.json'
 import { Product } from "@/types/product";
@@ -27,6 +27,7 @@ export default function Shop() {
                 <link rel="icon" href="/favicon.png" />
             </Head>
             <NavBar highlightedLink="Shop"/>
+            <ProductCarousel />
             <ShoeCollection title="Products" products={products} />
         </>
     );
