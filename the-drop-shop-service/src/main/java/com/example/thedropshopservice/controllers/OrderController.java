@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequiredArgsConstructor
@@ -20,5 +22,11 @@ public class OrderController {
         var order = orderService.placeOrder(orderDetails);
         System.out.println(order);
         return ResponseEntity.ok(order);
+    }
+
+    @GetMapping("order/findByEmail")
+    public ResponseEntity<List<Order>> findOrdersByEmail(@RequestParam(name = "email") String email) {
+        var orders = orderService.findByEmail(email);
+        return ResponseEntity.ok(orders);
     }
 }

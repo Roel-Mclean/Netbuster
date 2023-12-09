@@ -7,6 +7,7 @@ export interface Product {
     images: Image[];
     stock: number;
     trailerURL: string;
+    qty: number;
 }
 
 export interface Image {

@@ -9,4 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class ProductOrder {
     private String productId;
+    private String title;
+    private int price;
+    private int qty;
 }

@@ -4,16 +4,20 @@ import { createContext, useReducer } from "react";
 export const CartContext = createContext<CartContextInterface>({
     items: [],
     addToCart: undefined,
-    removeFromCart: undefined
+    removeFromCart: undefined,
+    updateQty: undefined,
+    clearCart: undefined
 });
 
 interface CartContextInterface {
     items: BasketItem[],
     addToCart: ((product: BasketItem) => void) | undefined,
-    removeFromCart: ((id: string) => void) | undefined
+    removeFromCart: ((id: string) => void) | undefined,
+    updateQty: ((id: string, qty: number) => void) | undefined,
+    clearCart: (() => void) | undefined
 }
 
-type Actions = "ADD" | "REMOVE";
+type Actions = "ADD" | "REMOVE" | "UPDATE" | "CLEAR";
 
 interface CartAction {
     type: Actions;
@@ -38,6 +42,18 @@ const cartReducer = (state: { items: BasketItem[] }, action: CartAction) => {
                 ...state,
                 items: payload.items,
             };
+        
+        case "UPDATE":
+            return {
+                ...state,
+                items: payload.items
+            }
+
+        case "CLEAR":
+            return {
+                ...state,
+                items: payload.items
+            }
     
         default:
             throw new Error("No case for that type");
@@ -75,10 +91,41 @@ export function CartProvider({children} : Props) {
             });
         }
 
+        const updateQty = (id: String, qty: number) => {
+            const updatedCart = state.items.map((product) => {
+                // Check if this is the product to update
+                if (product.productId === id) {
+                    // Update the quantity of the product
+                    return { ...product, qty: qty };
+                }
+        
+                // Return the product unchanged if it's not the one we're updating
+                return product;
+            })
+
+            dispatch({
+                type: "UPDATE",
+                payload: {
+                    items: updatedCart
+                }
+            })
+        }
+
+        const clearCart = () => {
+            dispatch({
+                type: "CLEAR",
+                payload: {
+                    items: []
+                }
+            })
+        }
+
         const value = {
             items: state.items,
             addToCart,
             removeFromCart,
+            updateQty,
+            clearCart
         }
     
     return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

@@ -1,4 +1,4 @@
-import { Divider, Footer, NavBar } from "@/components/componentsindex";
+import { Divider, Footer, NavBar, QtyStepper } from "@/components/componentsindex";
 import Image from "next/image";
 import styled from "styled-components";
 import { FaTrashAlt } from "react-icons/fa";
@@ -28,7 +28,7 @@ const HeaderData = styled.th`
   font-size: 18px;
   font-weight: 500;
   padding: 10px;
-  text-align: left;
+  text-align: center;
 `;
 
 const Button = styled.button`
@@ -106,7 +106,7 @@ export default function Cart() {
                   </ProductImageContainer>
                   <td>{product.title}</td>
                   <td>£{product.price}</td>
-                  <td>1</td>
+                  <td><QtyStepper productId={product.productId} /></td>
                   <td>
                     <button onClick={() => removeProduct(product.productId)}>
                       <FaTrashAlt color="red" title="Remove" />

@@ -99,7 +99,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <GlobalStyle />
         <Component {...pageProps} />
         {!isOnline &&
-          <Notification>You are offline, reconnect connection to continue. <FaExclamationCircle /></Notification>
+          <Notification><FaExclamationCircle /> You are offline...Reconnect connection to continue</Notification>
         }
         <Footer />
       </UserContext.Provider>

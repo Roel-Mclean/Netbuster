@@ -12,20 +12,39 @@ const PageContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 20px;
+
+  width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/movie_catalogue.jpeg");
+    background-size: 200%;
+
+    animation: pan-image 60s linear infinite;
+    animation-direction: alternate;
+
+    @keyframes pan-image {
+        from {
+            background-position: 0% 0%;
+        }
+
+        to {
+            background-position: 100% 100%;
+        }
+    }
 `;
 
 const Section = styled.fieldset`
-  background-color: #f5f5f5;
+  background-color: #FFF;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
   padding: 20px;
   width: 100%;
-  max-width: 400px;
   margin: 20px 0;
 `;
 
 const Input = styled.input`
-  border: 2px solid #ddd;
+  border: 1px solid #EDEFF2;
+  background-color: #EDEFF2;
   border-radius: 5px;
   height: 40px;
   width: 95%;
@@ -35,7 +54,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  background-color: #28a745;
+  background-color: #C60D0D;
   border: none;
   border-radius: 5px;
   color: white;
@@ -48,27 +67,22 @@ const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #218838;
+    background-color: #C60D0D;
   }
 `;
 
-const Account = styled.p`
-  margin-top: 20px;
-`;
-
-const StyledLink = styled.a`
-  color: #28a745;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center; // Center the button horizontally
+  width: 100%; // Take up the full width of the parent container
+  margin-top: 20px; // Optional: to add some space above the button
 `;
 
 export default function SignUp() {
   const { setCurrentUser } = useContext(UserContext);
   const router = useRouter();
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
   const signup = async (e: any) => {
@@ -77,7 +91,7 @@ export default function SignUp() {
       method: "POST",
       body: JSON.stringify({
         email: email,
-        username: username,
+        username: name,
         password: password
       }),
       headers: {
@@ -105,8 +119,8 @@ export default function SignUp() {
       <PageContainer>
         <form onSubmit={signup}>
           <Section>
-            <h2>Sign Up</h2>
-            <label htmlFor="email">Email</label>
+            <h2 style={{textAlign: "center"}}><b>Sign Up</b></h2>
+            <label htmlFor="email"><b>Email</b></label>
             <Input
               type="email"
               id="email"
@@ -114,15 +128,15 @@ export default function SignUp() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <label htmlFor="username">Username</label>
+            <label htmlFor="name"><b>Name</b></label>
             <Input
               type="text"
-              id="username"
-              name="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              id="name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password"><b>Password</b></label>
             <Input
               type="password"
               id="password"
@@ -131,11 +145,10 @@ export default function SignUp() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </Section>
-          <Button type="submit">Sign Up</Button>
+          <ButtonContainer>
+            <Button type="submit">Sign Up</Button>
+          </ButtonContainer>
         </form>
-        <Account>
-          Already have an account? <StyledLink href="/login">Login</StyledLink>
-        </Account>
       </PageContainer>
     </>
   );

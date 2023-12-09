@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Divider, Footer, NavBar } from "@/components/componentsindex";
+import { Divider, NavBar } from "@/components/componentsindex";
 import { CartContext } from "@/context/cartcontext";
 import { getBase64ImageUrl } from "@/util/imageutil";
 import { useContext, useState } from "react";
@@ -7,6 +7,7 @@ import styled from "styled-components"
 import { Order } from "@/types/order";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { UserContext } from "./_app";
 
 const StyledCheckout = styled.div`
   text-align: center;
@@ -72,10 +73,11 @@ const ProductImage = styled(Image)`
 `;
 
 export default function Checkout() {
-  const { items, addToCart, removeFromCart } = useContext(CartContext);
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const { items, addToCart, removeFromCart, clearCart } = useContext(CartContext);
   const router = useRouter();
 
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(currentUser ? currentUser.email : "");
   const [phone, setPhone] = useState("");
   const [fname, setFname] = useState("");
   const [sname, setSname] = useState("");
@@ -89,7 +91,7 @@ export default function Checkout() {
 
   const getTotal = (): number => {
     if (items && items.length > 0) {
-      const prices = items.map(item => item.price)
+      const prices = items.map(item => item.price * item.qty)
       return prices.reduce((total, num) => total + num);
     }
     return 0;
@@ -100,6 +102,9 @@ export default function Checkout() {
     const request = {
       "products": items.map(item => { return {
         "productId": item.productId,
+        "title": item.title,
+        "price": item.price,
+        "qty": item.qty
     }}),
       "customer": {
         "email":  email,
@@ -126,7 +131,11 @@ export default function Checkout() {
 
     if (data.status === 200) {
       const order = await data.json() as Order;
+      if (clearCart)
+        clearCart();
       router.replace(`/order/${order.orderId}`);
+    } else {
+      router.replace(`/orderfailed`);
     }
   }
 
@@ -202,6 +211,7 @@ export default function Checkout() {
                   <div>
                     <p>{item.title}</p>
                     <p>Price - £{item.price}</p>
+                    <p>Qty - {item.qty}</p>
                   </div>
                 </OrderItem>
               ))}

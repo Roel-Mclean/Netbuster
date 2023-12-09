@@ -46,6 +46,13 @@ export default function Product() {
     const { items, addToCart, removeFromCart } = useContext(CartContext);
     const [stars, setStars] = useState<IconType[]>([]);
 
+    const isSoldOut = () => {
+        if (product)
+            return product?.stock < 1
+
+        return true
+    }
+
     useEffect(() => {
         //check if router fields have updated before fetching product
         if (!router.isReady) return;
@@ -69,7 +76,8 @@ export default function Product() {
                 productId: product.productId, 
                 image: product.images[0],
                 title: product.title, 
-                price: product.price
+                price: product.price,
+                qty: 1
             });
             setAddToCartButtonText("Added To Cart!")
         }
@@ -96,7 +104,7 @@ export default function Product() {
                     <h2>{product?.title}</h2>
                     <p>£{product?.price}</p>
                     <div style={{textAlign: "center"}}>
-                        <Button onClick={addProductToCart}>{addToCartButtonText}</Button>
+                        <Button disabled={isSoldOut()} onClick={addProductToCart}>{isSoldOut() ? "Sold Out" : addToCartButtonText}</Button>
                     </div>
                     <p style={{fontWeight: 400}}>Free delivery on all orders.</p>
                     <Divider />

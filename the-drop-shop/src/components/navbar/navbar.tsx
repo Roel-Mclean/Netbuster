@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useDeferredValue, useEffect, useState } from "react";
 import styled from "styled-components";
 import { NavBarInterface } from "./navbar.types";
 import { PageLink } from "../componentsindex";
@@ -44,7 +44,7 @@ const Item = styled.li`
 
 const MobileMenuIcon = styled(FaBars)`
     font-size: 24px;
-    color: #003399;
+    color: #fff;
     cursor: pointer;
 
     @media (min-width: 769px) {
@@ -54,7 +54,7 @@ const MobileMenuIcon = styled(FaBars)`
 
 const MobileMenuDropdown = styled.div<{ isOpen: boolean }>`
     display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-    background-color: #003399;
+    background-color: #1f1f1f;
     position: absolute;
     top: 100%;
     left: 0;
@@ -63,7 +63,7 @@ const MobileMenuDropdown = styled.div<{ isOpen: boolean }>`
 
     a {
         display: block;
-        color: #003399;
+        color: #fff;
         font-size: 18px;
         margin-bottom: 5px;
         text-decoration: none;
@@ -72,7 +72,7 @@ const MobileMenuDropdown = styled.div<{ isOpen: boolean }>`
 
 const CloseIcon = styled(FaTimes)`
     font-size: 24px;
-    color: #003399;
+    color: #fff;
     cursor: pointer;
     position: absolute;
     top: 15px;
@@ -96,7 +96,7 @@ const DropdownContent = styled.div<{isOpen: boolean}>`
   position: absolute;
   top: 100%;
   left: -150%;
-  background-color: #F1F1F1;
+  background-color: #1F1F1F;
   border: none;
   border-radius: 4px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -154,6 +154,10 @@ export const NavBar: React.FC<NavBarInterface> = (props: NavBarInterface) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  useEffect(() => {
+    console.log(currentUser)
+  }, [currentUser])
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -198,11 +202,20 @@ export const NavBar: React.FC<NavBarInterface> = (props: NavBarInterface) => {
             <DropdownContent isOpen={isDropdownOpen}>
               {!currentUser ? (
                 <>
-                  <ProfileLink href="/login">Login</ProfileLink>
-                  <ProfileLink href="/signup">Sign Up</ProfileLink>
+                  <Link href="/login" passHref legacyBehavior style={{textDecoration: "none"}} >
+                    <ProfileLink href="/login">Login</ProfileLink>
+                  </Link>
+                  <Link href="/signup" passHref legacyBehavior style={{textDecoration: "none"}} >
+                    <ProfileLink href="/signup">Sign Up</ProfileLink>
+                  </Link>
                 </>
               ) : (
-                <Button onClick={signOut}>Sign Out</Button>
+                <>
+                <Link href="/profile" passHref legacyBehavior style={{textDecoration: "none"}} >
+                  <ProfileLink href="/profile">Profile</ProfileLink>
+                </Link>
+                  <Button onClick={signOut}>Sign Out</Button>
+                </>
               )
               }
             </DropdownContent>

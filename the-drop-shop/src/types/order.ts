@@ -1,6 +1,8 @@
+import { Product } from "./product";
+
 export interface Order {
     orderId: string;
-    productIds: string[];
+    products: Product[];
     customer: Customer;
     datePlaced: Date;
 }

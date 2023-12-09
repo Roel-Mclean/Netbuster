@@ -59,7 +59,7 @@ public class ProductService {
             return;
         }
         var product = productOptional.get();
-        product.setStock(product.getStock() - 1);
+        product.setStock(product.getStock() - productOrder.getQty());
         productRepository.save(product);
     }
 

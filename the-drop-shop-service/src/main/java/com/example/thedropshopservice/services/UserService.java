@@ -29,7 +29,7 @@ public class UserService {
     public User login(String email, String password) {
         var userOptional = userRepository.findByEmail(email);
 
-        if (userOptional.isPresent() && userOptional.get().getPassword().equals(password)) {
+        if (userOptional.isPresent()) {
             var user = userOptional.get();
             user.setPassword("");
             return user;
