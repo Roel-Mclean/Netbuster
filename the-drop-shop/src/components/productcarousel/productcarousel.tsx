@@ -11,6 +11,12 @@ const SlideDirection = styled.div`
     position: relative;
 `
 
+const Carousel = styled.div`
+  // @media (max-width: 768px) {
+  //   height: 30vh;
+  // }
+`;
+
 const Left = styled.div`
     background-color: #C60D0D;
     opacity: 0.6;
@@ -22,6 +28,10 @@ const Left = styled.div`
     top: 0; /* Vertically center the indicator */
     transform: translateY(-600%);
     left: 10px; /* Adjust the left position as needed */
+
+    @media (max-width: 768px) {
+      transform: translateY(-350%);
+    }
 `
 
 const Right = styled.div`
@@ -35,6 +45,10 @@ const Right = styled.div`
     top: 50%; /* Vertically center the indicator */
     transform: translateY(-600%);
     right: 10px; /* Adjust the right position as needed */
+
+    @media (max-width: 768px) {
+      transform: translateY(-350%);
+    }
 `
 
 const Indicator = styled.div`
@@ -50,6 +64,16 @@ const Dot = styled.div<DotProps>`
     height: 15px;
     border-radius: 50%;
     
+`
+
+const StyledImage = styled(Image)`
+  width: 100%; 
+  height: 75vh;
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    height: 30vh;
+  }
 `
 interface DotProps {
     isActive: boolean;
@@ -73,18 +97,16 @@ export const ProductCarousel = () => {
   };
 
   return (
-    <div className="carousel">
+    <Carousel>
         <Link href={products[currentIndex].productPath}>
-            <Image
-                alt={products[currentIndex].title}
-                width={0}
-                height={0}
-                // sizes="100vw"
-                key={currentIndex}
-                loader={() => products[currentIndex].imageURL}
-                style={{width: "100%", height: "75vh", objectFit: "cover"}}
-                content=""
-            src={products[currentIndex].imageURL}
+            <StyledImage
+              alt={products[currentIndex].title}
+              width={0}
+              height={0}
+              key={currentIndex}
+              loader={() => products[currentIndex].imageURL}
+              content=""
+              src={products[currentIndex].imageURL}
             />
         </Link>
         <SlideDirection>
@@ -118,6 +140,6 @@ export const ProductCarousel = () => {
           ></Dot>
         ))}
       </Indicator>
-    </div>
+    </Carousel>
   );
 };

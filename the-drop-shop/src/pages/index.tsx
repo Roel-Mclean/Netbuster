@@ -10,6 +10,10 @@ const SlideDirection = styled.div`
     display: flex;
     justify-content: space-between;
     position: relative;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `
 
 const Left = styled.div`
@@ -58,7 +62,6 @@ export default function Home() {
             const data = await res.json() as Product[];
             setLatestProducts(data);
             setDisplayedProducts(data.slice(currentIndex, 4));
-            console.log(data)
         } catch (err) {
             console.log(err);
         }

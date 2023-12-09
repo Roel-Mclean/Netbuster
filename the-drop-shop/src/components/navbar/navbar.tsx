@@ -46,6 +46,7 @@ const MobileMenuIcon = styled(FaBars)`
     font-size: 24px;
     color: #fff;
     cursor: pointer;
+    padding-right: 20px;
 
     @media (min-width: 769px) {
         display: none;
@@ -77,6 +78,7 @@ const CloseIcon = styled(FaTimes)`
     position: absolute;
     top: 15px;
     right: 15px;
+    padding-right: 20px;
 `;
 
 const DropdownContainer = styled.div`
@@ -154,10 +156,6 @@ export const NavBar: React.FC<NavBarInterface> = (props: NavBarInterface) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  useEffect(() => {
-    console.log(currentUser)
-  }, [currentUser])
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -232,7 +230,18 @@ export const NavBar: React.FC<NavBarInterface> = (props: NavBarInterface) => {
           <PageLink isHighlighted={props.highlightedLink === "Shop"} href="/shop">Shop</PageLink>
           <PageLink isHighlighted={props.highlightedLink === "About"} href="/about">About</PageLink>
           <PageLink isHighlighted={props.highlightedLink === "Cart"} href="/cart"><FaShoppingCart /></PageLink>
-          <PageLink isHighlighted={props.highlightedLink === "Profile"} href="/"><FaUser /></PageLink>
+          {!currentUser ? (
+              <>
+                <PageLink href="/login">Login</PageLink>
+                <PageLink href="/signup">Sign Up</PageLink>
+              </>
+            ) : (
+              <>
+                <PageLink href="/profile">Profile</PageLink>
+                <Button onClick={signOut}>Sign Out</Button>
+              </>
+            )
+          }
         </MobileMenuDropdown>
       )}
     </StyledNavBar>

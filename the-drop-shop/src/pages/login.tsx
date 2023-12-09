@@ -14,24 +14,24 @@ const PageContainer = styled.div`
   justify-content: center;
   padding: 20px;
 
-  width: 100vw;
+  width: calc(100vw - 40px);
     height: 100vh;
     position: relative;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/movie_catalogue.jpeg");
     background-size: 200%;
 
-    animation: pan-image 60s linear infinite;
-    animation-direction: alternate;
+  animation: pan-image 60s linear infinite;
+  animation-direction: alternate;
 
-    @keyframes pan-image {
-        from {
-            background-position: 0% 0%;
-        }
-
-        to {
-            background-position: 100% 100%;
-        }
+  @keyframes pan-image {
+    from {
+      background-position: 0% 0%;
     }
+
+    to {
+      background-position: 100% 100%;
+    }
+  }
 `;
 
 const Section = styled.fieldset`
@@ -41,6 +41,10 @@ const Section = styled.fieldset`
   padding: 20px;
   width: 100%;
   margin: 20px 0;
+
+  @media (max-width: 768px) {
+    max-width: 350px;
+}
 `;
 
 const Input = styled.input`
@@ -77,18 +81,6 @@ const ButtonContainer = styled.div`
   justify-content: center; // Center the button horizontally
   width: 100%; // Take up the full width of the parent container
   margin-top: 20px; // Optional: to add some space above the button
-`;
-
-const Account = styled.p`
-  margin-top: 20px;
-`;
-
-const StyledLink = styled(Link)`
-  color: #007bff;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 export default function Login() {

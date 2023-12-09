@@ -1,11 +1,9 @@
-import { Divider, Footer, ImageShowcase, NavBar, SizeGrid } from "@/components/componentsindex";
+import { Divider, ImageShowcase, NavBar } from "@/components/componentsindex";
 import { CartContext } from "@/context/cartcontext";
-import { Product, Size } from "@/types/product";
+import { Product } from "@/types/product";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
-import { IconType } from "react-icons";
-import { FaStar } from "react-icons/fa";
 import YouTube from "react-youtube";
 import styled from "styled-components";
 
@@ -19,6 +17,16 @@ const FlexContainer = styled.div`
 
     @media (max-width: 768px) {
         flex-direction: column;
+    }
+`;
+
+const Container = styled.div`
+    @media (min-width: 769px) {
+        padding-left: 15px;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
     }
 `;
 
@@ -41,10 +49,32 @@ export default function Product() {
     const router = useRouter();
     const { productid } = router.query;
     const [product, setProduct] = useState<Product>();
-    const [selectedSize, setSelectedSize] = useState<Size>();
     const [addToCartButtonText, setAddToCartButtonText] = useState("Add To Cart");
-    const { items, addToCart, removeFromCart } = useContext(CartContext);
-    const [stars, setStars] = useState<IconType[]>([]);
+    const { addToCart } = useContext(CartContext);
+    const [videoWidth, setVideoWidth] = useState(640);
+    const [videoHeight, setVideoHeight] = useState(390);
+
+    useEffect(() => {
+        function handleResize() {
+            const width = window.innerWidth;
+            if (width < 768) {
+                setVideoWidth(width - 40); // Adjust the width based on screen size
+                setVideoHeight((width - 40) * (390 / 640)); // Maintain aspect ratio
+            } else {
+                setVideoWidth(640);
+                setVideoHeight(390);
+            }
+        }
+
+        // Add event listener
+        // window.addEventListener('resize', handleResize);
+
+        // Call handler right away so state gets updated with initial window size
+        handleResize();
+
+        // Remove event listener on cleanup
+        // return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const isSoldOut = () => {
         if (product)
@@ -84,8 +114,8 @@ export default function Product() {
     }
 
     const opts = { 
-        height: "390", 
-        width: "640", 
+        height: videoHeight.toString(), 
+        width: videoWidth.toString(), 
         playerVars: { 
           autoplay: 0, 
         }, 
@@ -100,7 +130,7 @@ export default function Product() {
             <NavBar highlightedLink="Shop" />
             <FlexContainer>
                 <ImageShowcase images={product ? product.images : []} />
-                <div style={{paddingLeft: 15}}>
+                <Container>
                     <h2>{product?.title}</h2>
                     <p>£{product?.price}</p>
                     <div style={{textAlign: "center"}}>
@@ -129,7 +159,7 @@ export default function Product() {
                     <h3>Synopsis</h3>
                     <p>{product?.description}</p>
                     <YouTube videoId={product?.trailerURL} opts={opts} />
-                </div>
+                </Container>
             </FlexContainer>
         </>
     );

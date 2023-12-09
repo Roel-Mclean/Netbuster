@@ -13,8 +13,8 @@ const PageContainer = styled.div`
   justify-content: center;
   padding: 20px;
 
-  width: 100vw;
-    height: 100vh;
+  width: calc(100vw - 40px);
+  min-height: 100vh;
     position: relative;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/movie_catalogue.jpeg");
     background-size: 200%;
@@ -40,6 +40,10 @@ const Section = styled.fieldset`
   padding: 20px;
   width: 100%;
   margin: 20px 0;
+
+  @media (max-width: 768px) {
+    max-width: 350px;
+  }
 `;
 
 const Input = styled.input`

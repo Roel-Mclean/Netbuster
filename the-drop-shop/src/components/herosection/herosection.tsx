@@ -26,6 +26,10 @@ const StyledHeroSection = styled.section`
             background-position: 100% 100%;
         }
     }
+
+    @media (max-width: 768px) {
+        height: 60vh;
+    }
 `;
 
 export const HeroSection = () => {
