@@ -1,1155 +1,136 @@
 [{
   "_id": {
-    "$oid": "645b7453341c37014e8a31ed"
+    "$oid": "6571ee7cbc2c6deef1276d87"
   },
-  "title": "Air Jordan 1 Retro High OG 'University Blue'",
-  "description": "The Air Jordan 1 Retro High OG ‘University Blue’ makes use of a familiar palette that gives the nod to Michael Jordan’s UNC alma mater. The all-leather upper features a white base with powder blue overlays and a black signature Swoosh. Matching black accents make their way to the collar, tongue tag and printed Wings logo on the lateral collar flap. A brighter shade of blue is applied to the standard AJ1 outsole, featuring multi-directional traction and a pivot point under the forefoot.",
-  "price": 410,
-  "brand": "Air Jordan",
-  "sizes": [
-    {
-      "size": 6,
-      "stock": 5,
-      "_id": {
-        "$oid": "645b7453341c37014e8a31ee"
-      }
-    },
-    {
-      "size": 6.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645b7453341c37014e8a31ef"
-      }
-    },
-    {
-      "size": 7,
-      "stock": 5,
-      "_id": {
-        "$oid": "645b7453341c37014e8a31f0"
-      }
-    },
-    {
-      "size": 7.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645b7453341c37014e8a31f1"
-      }
-    },
-    {
-      "size": 8,
-      "stock": 5,
-      "_id": {
-        "$oid": "645b7453341c37014e8a31f2"
-      }
-    },
-    {
-      "size": 8.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645b7453341c37014e8a31f3"
-      }
-    },
-    {
-      "size": 9,
-      "stock": 5,
-      "_id": {
-        "$oid": "645b7453341c37014e8a31f4"
-      }
-    },
-    {
-      "size": 9.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645b7453341c37014e8a31f5"
-      }
-    },
-    {
-      "size": 10,
-      "stock": 5,
-      "_id": {
-        "$oid": "645b7453341c37014e8a31f6"
-      }
-    },
-    {
-      "size": 10.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645b7453341c37014e8a31f7"
-      }
-    },
-    {
-      "size": 11,
-      "stock": 5,
-      "_id": {
-        "$oid": "645b7453341c37014e8a31f8"
-      }
-    },
-    {
-      "size": 11.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645b7453341c37014e8a31f9"
-      }
-    },
-    {
-      "size": 12,
-      "stock": 5,
-      "_id": {
-        "$oid": "645b7453341c37014e8a31fa"
-      }
-    }
-  ],
+  "title": "Avengers Endgame",
+  "description": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+  "price": 19,
+  "rating": 5,
   "imageIds": [
     {
-      "$oid": "645b7453341c37014e8a31e9"
-    },
-    {
-      "$oid": "645b7453341c37014e8a31ea"
-    },
-    {
-      "$oid": "645b7453341c37014e8a31eb"
-    },
-    {
-      "$oid": "645b7453341c37014e8a31ec"
+      "$oid": "6571ee7cbc2c6deef1276d86"
     }
   ],
-  "__v": 0
-},{
+  "stock": 0,
+  "trailerURL": "TcMBFSGVi1c",
+  "_class": "com.example.thedropshopservice.entities.Product"
+},
+{
   "_id": {
-    "$oid": "645bb8d51effe1aee33edfad"
+    "$oid": "6571fb08cead79db3401d28f"
   },
-  "title": "Dunk Low 'Grey Fog'",
-  "description": "The Nike Dunk Low ‘Grey Fog’ delivers a subtle two-tone colorway of the classic silhouette originally released in 1985 as a college hoops shoe. The all-leather upper is treated to a pristine white base with contrasting overlays in a light grey shade. The same neutral tone is repeated on the Swoosh, laces and woven Nike tongue tag. Additional Nike branding lands on the heel tab and padded sockliner. The low-top rests on a standard rubber cupsole that pairs white sidewalls with a grey rubber outsole.",
-  "price": 160,
-  "brand": "Nike",
-  "sizes": [
-    {
-      "size": 6,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bb8d51effe1aee33edfae"
-      }
-    },
-    {
-      "size": 6.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bb8d51effe1aee33edfaf"
-      }
-    },
-    {
-      "size": 7,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bb8d51effe1aee33edfb0"
-      }
-    },
-    {
-      "size": 7.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bb8d51effe1aee33edfb1"
-      }
-    },
-    {
-      "size": 8,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bb8d51effe1aee33edfb2"
-      }
-    },
-    {
-      "size": 8.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bb8d51effe1aee33edfb3"
-      }
-    },
-    {
-      "size": 9,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bb8d51effe1aee33edfb4"
-      }
-    },
-    {
-      "size": 9.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bb8d51effe1aee33edfb5"
-      }
-    },
-    {
-      "size": 10,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bb8d51effe1aee33edfb6"
-      }
-    },
-    {
-      "size": 10.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bb8d51effe1aee33edfb7"
-      }
-    },
-    {
-      "size": 11,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bb8d51effe1aee33edfb8"
-      }
-    },
-    {
-      "size": 11.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bb8d51effe1aee33edfb9"
-      }
-    },
-    {
-      "size": 12,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bb8d51effe1aee33edfba"
-      }
-    }
-  ],
+  "title": "Shrek",
+  "description": "A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.",
+  "price": 13,
+  "rating": 4,
   "imageIds": [
     {
-      "$oid": "645bb8d51effe1aee33edfa9"
-    },
-    {
-      "$oid": "645bb8d51effe1aee33edfaa"
-    },
-    {
-      "$oid": "645bb8d51effe1aee33edfab"
-    },
-    {
-      "$oid": "645bb8d51effe1aee33edfac"
+      "$oid": "6571fb08cead79db3401d28e"
     }
   ],
-  "__v": 0
-},{
+  "stock": 6,
+  "trailerURL": "CwXOrWvPBPk",
+  "_class": "com.example.thedropshopservice.entities.Product"
+},
+{
   "_id": {
-    "$oid": "645bbccd8f2d004b16c2f72b"
+    "$oid": "6571fb5c3f53a8b294d37973"
   },
-  "title": "Air Jordan 11 Retro 'Space Jam' 2016",
-  "description": "The Air Jordan 11 Retro ‘Space Jam’ 2016 commemorates the 20th anniversary of the movie ‘Space Jam.’ Worn by Michael Jordan as a Player Exclusive (PE) in both the movie and the 1995 NBA Playoffs, the 2016 retro ended up being Nike’s largest and most successful shoe launch ever. This 2016 sneaker is a more faithful reproduction of the original PE than the 2000 and 2009 retros. The sneaker also swaps the traditional #23 for MJ’s comeback #45 on the heel, a first for an Air Jordan 11 retail release. ",
-  "price": 500,
-  "brand": "Air Jordan",
-  "sizes": [
-    {
-      "size": 6,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbccd8f2d004b16c2f72c"
-      }
-    },
-    {
-      "size": 6.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbccd8f2d004b16c2f72d"
-      }
-    },
-    {
-      "size": 7,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbccd8f2d004b16c2f72e"
-      }
-    },
-    {
-      "size": 7.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbccd8f2d004b16c2f72f"
-      }
-    },
-    {
-      "size": 8,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbccd8f2d004b16c2f730"
-      }
-    },
-    {
-      "size": 8.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbccd8f2d004b16c2f731"
-      }
-    },
-    {
-      "size": 9,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbccd8f2d004b16c2f732"
-      }
-    },
-    {
-      "size": 9.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbccd8f2d004b16c2f733"
-      }
-    },
-    {
-      "size": 10,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbccd8f2d004b16c2f734"
-      }
-    },
-    {
-      "size": 10.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbccd8f2d004b16c2f735"
-      }
-    },
-    {
-      "size": 11,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbccd8f2d004b16c2f736"
-      }
-    },
-    {
-      "size": 11.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbccd8f2d004b16c2f737"
-      }
-    },
-    {
-      "size": 12,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbccd8f2d004b16c2f738"
-      }
-    }
-  ],
+  "title": "Frozen",
+  "description": "When the newly crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.",
+  "price": 17,
+  "rating": 4,
   "imageIds": [
     {
-      "$oid": "645bbccd8f2d004b16c2f728"
-    },
-    {
-      "$oid": "645bbccd8f2d004b16c2f729"
-    },
-    {
-      "$oid": "645bbccd8f2d004b16c2f72a"
+      "$oid": "6571fb5c3f53a8b294d37972"
     }
   ],
-  "__v": 0
-},{
+  "stock": 7,
+  "trailerURL": "TbQm5doF_Uc",
+  "_class": "com.example.thedropshopservice.entities.Product"
+},
+{
   "_id": {
-    "$oid": "645bbd18094a0782dad579e9"
+    "$oid": "6571fbbf2b262d470821b2ba"
   },
-  "title": "Dior B22 'White Blue'",
-  "description": "The B22 sneakers take inspiration from retro running styles. The chunky low-top silhouette is defined by a gray calfskin and blue mesh-paneled upper set on a sculpted black, white and blue rubber sole. The blue mesh tongue and heel counter are accented with nylon ribbons while a 'Dior' logo adorns the side. Try contrasting them with tailored suiting to add a fashionable sportswear touch to your look.",
-  "price": 1000,
-  "brand": "Dior",
-  "sizes": [
-    {
-      "size": 6,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbd18094a0782dad579ea"
-      }
-    },
-    {
-      "size": 6.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbd18094a0782dad579eb"
-      }
-    },
-    {
-      "size": 7,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbd18094a0782dad579ec"
-      }
-    },
-    {
-      "size": 7.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbd18094a0782dad579ed"
-      }
-    },
-    {
-      "size": 8,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbd18094a0782dad579ee"
-      }
-    },
-    {
-      "size": 8.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbd18094a0782dad579ef"
-      }
-    },
-    {
-      "size": 9,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbd18094a0782dad579f0"
-      }
-    },
-    {
-      "size": 9.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbd18094a0782dad579f1"
-      }
-    },
-    {
-      "size": 10,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbd18094a0782dad579f2"
-      }
-    },
-    {
-      "size": 10.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbd18094a0782dad579f3"
-      }
-    },
-    {
-      "size": 11,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbd18094a0782dad579f4"
-      }
-    },
-    {
-      "size": 11.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbd18094a0782dad579f5"
-      }
-    },
-    {
-      "size": 12,
-      "stock": 5,
-      "_id": {
-        "$oid": "645bbd18094a0782dad579f6"
-      }
-    }
-  ],
+  "title": "Harry Potter and the Deathly Hallows: Part 2",
+  "description": "Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.",
+  "price": 17,
+  "rating": 5,
   "imageIds": [
     {
-      "$oid": "645bbd18094a0782dad579e5"
-    },
-    {
-      "$oid": "645bbd18094a0782dad579e6"
-    },
-    {
-      "$oid": "645bbd18094a0782dad579e7"
-    },
-    {
-      "$oid": "645bbd18094a0782dad579e8"
+      "$oid": "6571fbbf2b262d470821b2b9"
     }
   ],
-  "__v": 0
-},{
+  "stock": 7,
+  "trailerURL": "mObK5XD8udk",
+  "_class": "com.example.thedropshopservice.entities.Product"
+},
+{
   "_id": {
-    "$oid": "646bfd603ba4dd52411e2063"
+    "$oid": "6571fc45c8a9756eeeee2d0d"
   },
-  "title": "Jordan 4 Retro University Blue",
-  "description": "The Air Jordan 4 Retro ‘University Blue’ updates the classic silhouette with a suede upper in a familiar hue inspired by Michael Jordan’s UNC alma mater. The bright blue palette is contrasted by a speckled grey finish on the sneaker’s supportive wings and back heel, featuring a raised Jumpman icon in black. Secondary Jumpman branding adorns the woven tongue tag, designed to mimic a jock tag that typically appears on the bottom hem of Jordan jerseys.",
-  "price": 540,
-  "brand": "Air Jordan",
-  "sizes": [
-    {
-      "size": 6,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfd603ba4dd52411e2064"
-      }
-    },
-    {
-      "size": 6.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfd603ba4dd52411e2065"
-      }
-    },
-    {
-      "size": 7,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfd603ba4dd52411e2066"
-      }
-    },
-    {
-      "size": 7.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfd603ba4dd52411e2067"
-      }
-    },
-    {
-      "size": 8,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfd603ba4dd52411e2068"
-      }
-    },
-    {
-      "size": 8.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfd603ba4dd52411e2069"
-      }
-    },
-    {
-      "size": 9,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfd603ba4dd52411e206a"
-      }
-    },
-    {
-      "size": 9.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfd603ba4dd52411e206b"
-      }
-    },
-    {
-      "size": 10,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfd603ba4dd52411e206c"
-      }
-    },
-    {
-      "size": 10.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfd603ba4dd52411e206d"
-      }
-    },
-    {
-      "size": 11,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfd603ba4dd52411e206e"
-      }
-    },
-    {
-      "size": 11.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfd603ba4dd52411e206f"
-      }
-    },
-    {
-      "size": 12,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfd603ba4dd52411e2070"
-      }
-    }
-  ],
+  "title": "Spider-Man: Across the Spider-Verse",
+  "description": "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence. When the heroes clash on how to handle a new threat, Miles must redefine what it means to be a hero.",
+  "price": 24,
+  "rating": 10,
   "imageIds": [
     {
-      "$oid": "646bfd603ba4dd52411e205f"
-    },
-    {
-      "$oid": "646bfd603ba4dd52411e2060"
-    },
-    {
-      "$oid": "646bfd603ba4dd52411e2061"
-    },
-    {
-      "$oid": "646bfd603ba4dd52411e2062"
+      "$oid": "6571fc45c8a9756eeeee2d0c"
     }
   ],
-  "__v": 0
-},{
+  "stock": -1,
+  "trailerURL": "shW9i6k8cB0",
+  "_class": "com.example.thedropshopservice.entities.Product"
+},
+{
   "_id": {
-    "$oid": "646bfe0fcdee66d2f228ab32"
+    "$oid": "65746d475ee0b23b7f109834"
   },
-  "title": "Dior B23 High Top Logo Oblique",
-  "description": "Designer Kim Jones’ first Dior Homme sneaker collection includes the Dior B23 High 'Dior Oblique' shoe which debuted at Paris Fashion Week in December 2018. This modern interpretation on a classic high-top trainer features the classic Dior Oblique pattern printed on its technical canvas upper. A sheer mesh overlay adds a couture-inspired touch, while a calfskin pull tab adds a luxe accent. Underfoot, a dual-tone rubber outsole adorned with a Dior-branded bumper logo complements this design.",
-  "price": 1600,
-  "brand": "Dior",
-  "sizes": [
-    {
-      "size": 6,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfe0fcdee66d2f228ab33"
-      }
-    },
-    {
-      "size": 6.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfe0fcdee66d2f228ab34"
-      }
-    },
-    {
-      "size": 7,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfe0fcdee66d2f228ab35"
-      }
-    },
-    {
-      "size": 7.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfe0fcdee66d2f228ab36"
-      }
-    },
-    {
-      "size": 8,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfe0fcdee66d2f228ab37"
-      }
-    },
-    {
-      "size": 8.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfe0fcdee66d2f228ab38"
-      }
-    },
-    {
-      "size": 9,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfe0fcdee66d2f228ab39"
-      }
-    },
-    {
-      "size": 9.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfe0fcdee66d2f228ab3a"
-      }
-    },
-    {
-      "size": 10,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfe0fcdee66d2f228ab3b"
-      }
-    },
-    {
-      "size": 10.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfe0fcdee66d2f228ab3c"
-      }
-    },
-    {
-      "size": 11,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfe0fcdee66d2f228ab3d"
-      }
-    },
-    {
-      "size": 11.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfe0fcdee66d2f228ab3e"
-      }
-    },
-    {
-      "size": 12,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfe0fcdee66d2f228ab3f"
-      }
-    }
-  ],
+  "title": "Barbie",
+  "description": "Barbie suffers a crisis that leads her to question her world and her existence.",
+  "price": 19,
+  "rating": 4,
   "imageIds": [
     {
-      "$oid": "646bfe0fcdee66d2f228ab2f"
-    },
-    {
-      "$oid": "646bfe0fcdee66d2f228ab30"
-    },
-    {
-      "$oid": "646bfe0fcdee66d2f228ab31"
+      "$oid": "65746d475ee0b23b7f109833"
     }
   ],
-  "__v": 0
-},{
+  "stock": 5,
+  "trailerURL": "pBk4NYhWNMM",
+  "_class": "com.example.thedropshopservice.entities.Product"
+},
+{
   "_id": {
-    "$oid": "646bfee179f991ed29b02fd1"
+    "$oid": "65746e00e2f1b910c3949347"
   },
-  "title": "Jordan 4 Retro Off-White Sail (W)",
-  "description": "Made in collaboration with Virgil Abloh’s luxury streetwear brand, the Off-White x women’s Air Jordan 4 SP ‘Sail’ delivers a subdued take on the classic silhouette. The deconstructed leather build is rendered in a monochromatic Off-White finish, complete with semi-translucent TPU detailing on the molded eyelets, structural ‘wings’ and Nike Air-branded heel panel. Abloh’s signature flourishes include a tonal zip tie and ‘AIR’ printed above the visible Air sole unit.",
-  "price": 1800,
-  "brand": "Air Jordan",
-  "sizes": [
-    {
-      "size": 6,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfee179f991ed29b02fd2"
-      }
-    },
-    {
-      "size": 6.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfee179f991ed29b02fd3"
-      }
-    },
-    {
-      "size": 7,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfee179f991ed29b02fd4"
-      }
-    },
-    {
-      "size": 7.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfee179f991ed29b02fd5"
-      }
-    },
-    {
-      "size": 8,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfee179f991ed29b02fd6"
-      }
-    },
-    {
-      "size": 8.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfee179f991ed29b02fd7"
-      }
-    },
-    {
-      "size": 9,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfee179f991ed29b02fd8"
-      }
-    },
-    {
-      "size": 9.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfee179f991ed29b02fd9"
-      }
-    },
-    {
-      "size": 10,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfee179f991ed29b02fda"
-      }
-    },
-    {
-      "size": 10.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfee179f991ed29b02fdb"
-      }
-    },
-    {
-      "size": 11,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfee179f991ed29b02fdc"
-      }
-    },
-    {
-      "size": 11.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfee179f991ed29b02fdd"
-      }
-    },
-    {
-      "size": 12,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bfee179f991ed29b02fde"
-      }
-    }
-  ],
+  "title": "The Hunger Games: The Ballad of Songbirds & Snakes",
+  "description": "Coriolanus Snow mentors and develops feelings for the female District 12 tribute during the 10th Hunger Games.",
+  "price": 19,
+  "rating": 3,
   "imageIds": [
     {
-      "$oid": "646bfee179f991ed29b02fcd"
-    },
-    {
-      "$oid": "646bfee179f991ed29b02fce"
-    },
-    {
-      "$oid": "646bfee179f991ed29b02fcf"
-    },
-    {
-      "$oid": "646bfee179f991ed29b02fd0"
+      "$oid": "65746e00e2f1b910c3949346"
     }
   ],
-  "__v": 0
-},{
+  "stock": 6,
+  "trailerURL": "NxW_X4kzeus",
+  "_class": "com.example.thedropshopservice.entities.Product"
+},
+{
   "_id": {
-    "$oid": "646bff90f33a7a91412a6b5b"
+    "$oid": "65746eaec62bbc8b4030fa38"
   },
-  "title": "Tiffany & Co x Nike Air Force 1 Low Black Multi",
-  "description": "The Tiffany & Co. x Nike Air Force 1 Low ‘1837’ delivers the debut collaboration between the iconic New York-based jeweler and the Swoosh. While the ‘Diamond’ Dunk SB from 2005 paid homage to the luxury emporium by featuring a leather base in Tiffany’s signature hue, this AF1 release makes the brand partnership official. Named after Tiffany’s founding year, the low-top utilizes a black suede upper with a tumbled leather Swoosh in the instantly recognizable shade of robin’s-egg blue. Woven tongue tags display ‘Tiffany’ script, while traditional ‘Nike Air’ branding appears in tonal embroidery on each black leather heel tab. Below that, an engraved Tiffany badge shines in metallic silver. Tiffany unveiled a range of sterling silver accessories to accompany the premium kicks, available separately from the AF1: a shoe horn, a shoe brush, lace dubrae and a whistle chain.",
-  "price": 1400,
-  "brand": "Nike",
-  "sizes": [
-    {
-      "size": 6,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bff90f33a7a91412a6b5c"
-      }
-    },
-    {
-      "size": 6.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bff90f33a7a91412a6b5d"
-      }
-    },
-    {
-      "size": 7,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bff90f33a7a91412a6b5e"
-      }
-    },
-    {
-      "size": 7.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bff90f33a7a91412a6b5f"
-      }
-    },
-    {
-      "size": 8,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bff90f33a7a91412a6b60"
-      }
-    },
-    {
-      "size": 8.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bff90f33a7a91412a6b61"
-      }
-    },
-    {
-      "size": 9,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bff90f33a7a91412a6b62"
-      }
-    },
-    {
-      "size": 9.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bff90f33a7a91412a6b63"
-      }
-    },
-    {
-      "size": 10,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bff90f33a7a91412a6b64"
-      }
-    },
-    {
-      "size": 10.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bff90f33a7a91412a6b65"
-      }
-    },
-    {
-      "size": 11,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bff90f33a7a91412a6b66"
-      }
-    },
-    {
-      "size": 11.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bff90f33a7a91412a6b67"
-      }
-    },
-    {
-      "size": 12,
-      "stock": 5,
-      "_id": {
-        "$oid": "646bff90f33a7a91412a6b68"
-      }
-    }
-  ],
+  "title": "Wonka",
+  "description": "With dreams of opening a shop in a city renowned for its chocolate, a young and poor Willy Wonka discovers that the industry is run by a cartel of greedy chocolatiers.",
+  "price": 19,
+  "rating": 4,
   "imageIds": [
     {
-      "$oid": "646bff90f33a7a91412a6b57"
-    },
-    {
-      "$oid": "646bff90f33a7a91412a6b58"
-    },
-    {
-      "$oid": "646bff90f33a7a91412a6b59"
-    },
-    {
-      "$oid": "646bff90f33a7a91412a6b5a"
+      "$oid": "65746eaec62bbc8b4030fa37"
     }
   ],
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "646c003e4d08e2ace4ee713d"
-  },
-  "title": "Jordan 1 Retro High OG ‘Hyper Royal’",
-  "description": "The Air Jordan 1 Retro High OG ‘Hyper Royal’ takes on a weathered aesthetic, highlighted by a white leather upper with faded blue suede overlays. Contrasting neutral grey hits land on the Swoosh and padded collar, adding to the sneaker’s understated palette. OG branding elements include a Jordan Wings logo on the lateral collar flap and a woven Nike tongue tag. The high-top is mounted on a standard AJ1 rubber cupsole, featuring encapsulated Nike Air cushioning in the heel.",
-  "price": 360,
-  "brand": "Air Jordan",
-  "sizes": [
-    {
-      "size": 6,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c003e4d08e2ace4ee713e"
-      }
-    },
-    {
-      "size": 6.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c003e4d08e2ace4ee713f"
-      }
-    },
-    {
-      "size": 7,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c003e4d08e2ace4ee7140"
-      }
-    },
-    {
-      "size": 7.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c003e4d08e2ace4ee7141"
-      }
-    },
-    {
-      "size": 8,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c003e4d08e2ace4ee7142"
-      }
-    },
-    {
-      "size": 8.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c003e4d08e2ace4ee7143"
-      }
-    },
-    {
-      "size": 9,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c003e4d08e2ace4ee7144"
-      }
-    },
-    {
-      "size": 9.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c003e4d08e2ace4ee7145"
-      }
-    },
-    {
-      "size": 10,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c003e4d08e2ace4ee7146"
-      }
-    },
-    {
-      "size": 10.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c003e4d08e2ace4ee7147"
-      }
-    },
-    {
-      "size": 11,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c003e4d08e2ace4ee7148"
-      }
-    },
-    {
-      "size": 11.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c003e4d08e2ace4ee7149"
-      }
-    },
-    {
-      "size": 12,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c003e4d08e2ace4ee714a"
-      }
-    }
-  ],
-  "imageIds": [
-    {
-      "$oid": "646c003e4d08e2ace4ee7139"
-    },
-    {
-      "$oid": "646c003e4d08e2ace4ee713a"
-    },
-    {
-      "$oid": "646c003e4d08e2ace4ee713b"
-    },
-    {
-      "$oid": "646c003e4d08e2ace4ee713c"
-    }
-  ],
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "646c77477edaa476cf2152fb"
-  },
-  "title": "Test Product",
-  "description": "description",
-  "price": 10000,
-  "brand": "Nike",
-  "sizes": [
-    {
-      "size": 6,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c77477edaa476cf2152fc"
-      }
-    },
-    {
-      "size": 6.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c77477edaa476cf2152fd"
-      }
-    },
-    {
-      "size": 7,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c77477edaa476cf2152fe"
-      }
-    },
-    {
-      "size": 7.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c77477edaa476cf2152ff"
-      }
-    },
-    {
-      "size": 8,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c77477edaa476cf215300"
-      }
-    },
-    {
-      "size": 8.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c77477edaa476cf215301"
-      }
-    },
-    {
-      "size": 9,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c77477edaa476cf215302"
-      }
-    },
-    {
-      "size": 9.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c77477edaa476cf215303"
-      }
-    },
-    {
-      "size": 10,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c77477edaa476cf215304"
-      }
-    },
-    {
-      "size": 10.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c77477edaa476cf215305"
-      }
-    },
-    {
-      "size": 11,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c77477edaa476cf215306"
-      }
-    },
-    {
-      "size": 11.5,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c77477edaa476cf215307"
-      }
-    },
-    {
-      "size": 12,
-      "stock": 5,
-      "_id": {
-        "$oid": "646c77477edaa476cf215308"
-      }
-    }
-  ],
-  "imageIds": [
-    {
-      "$oid": "646c77477edaa476cf2152f7"
-    },
-    {
-      "$oid": "646c77477edaa476cf2152f8"
-    },
-    {
-      "$oid": "646c77477edaa476cf2152f9"
-    },
-    {
-      "$oid": "646c77477edaa476cf2152fa"
-    }
-  ],
-  "__v": 0
+  "stock": 8,
+  "trailerURL": "otNh9bTjXWg",
+  "_class": "com.example.thedropshopservice.entities.Product"
 }]
