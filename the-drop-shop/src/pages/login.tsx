@@ -85,18 +85,12 @@ const ButtonContainer = styled.div`
 
 export default function Login() {
   const router = useRouter();
-  const { setCurrentUser } = useContext(UserContext)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const signIn = async (e: any) => {
     e.preventDefault()
-    const userFetch = await fetch(`http://localhost:8080/api/v1/users/login?email=${email}&password=${password}`);
-    const user = await userFetch.json() as User;
-    if (setCurrentUser) {
-      setCurrentUser(user)
-    }
-    router.replace("/")
+
   }
 
   return (
