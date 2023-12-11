@@ -13,6 +13,7 @@ const StyledFooter = styled.footer`
   font-size: 32px;
   color: #FFF;
   margin-top: 0;
+  z-index: 10; 
 
   @media (min-height: 100vh) {
     position: fixed; // fixed for screens with at least 100vh height

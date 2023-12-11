@@ -39,6 +39,7 @@ const Container = styled.div`
   align-items: flex-start;
   padding: 20px;
   background: #fff; 
+  flex-grow: 1;
 `;
 
 const Input = styled.input`
@@ -97,6 +98,12 @@ const Button = styled.button`
     cursor: pointer;
     background-color: #333;
   }
+`;
+
+const PageLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* This makes the container at least as tall as the viewport */
 `;
 
 export default function Home() {
@@ -193,9 +200,11 @@ export default function Home() {
         <UsersChart>
           <h2>Users in the last 30 days</h2>
           <Line data={data} options={options} />
-        </UsersChart>
-      </Container>
+        </UsersChart>      
+      <PageLayout>
       <Footer></Footer>
+      </PageLayout>
+      </Container>
     </>
   )
 }
